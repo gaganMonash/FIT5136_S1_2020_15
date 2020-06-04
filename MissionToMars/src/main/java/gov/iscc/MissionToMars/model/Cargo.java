@@ -1,18 +1,20 @@
 package gov.iscc.MissionToMars.model;
+/**
+ * @Authour : Saral Khandelwal
+ * Declaration of Cargo class along with its private attributes which will be saved in Mongo DB
+ */
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@ToString
 @Getter
 @Setter
+
 @Document(collection = "Cargo")
 public class Cargo {
-    @Id
-    int _id;
-String cargoName;
-int cargoQuantity;
+
+    String cargoName;
+    int cargoQuantity;
 }
