@@ -1,8 +1,4 @@
 package gov.iscc.MissionToMars.api;
-/**
- * @Authour : Saral Khandelwal
- * Methods related to Mission API
- */
 
 import gov.iscc.MissionToMars.model.Mission;
 import gov.iscc.MissionToMars.service.MissionService;
@@ -21,25 +17,23 @@ public class MissionController {
     MissionService missionService;
     @Autowired
     UserService userService;
-
-    /**
-     * Method to add Mission using addMission Rest API
-     */
     @PostMapping("/addMission")
-    public void addMission(@RequestBody Mission mission) {
+    public void addMission(@RequestBody Mission mission)
+    {
         ObjectId id = new ObjectId();
         try {
 
 
             mission.set_id(id.toString());
             mission.setKey(id.toString());
-            userService.updateMissionList(mission.getCoordinatorId(), id.toString());
-        } catch (Exception e) {
+           userService.updateMissionList(mission.getCoordinatorId(),id.toString());
+        }catch (Exception e)
+        {
             e.printStackTrace();
         }
 
         List<Integer> administrators = mission.getAdministrators();
-        if (administrators != null) {
+        if(administrators!=null) {
             for (int admin :
                     administrators) {
                 userService.updateMissionList(admin, id.toString());
@@ -49,25 +43,23 @@ public class MissionController {
         missionService.addMission(mission);
 
     }
-
-    /**
-     * Method to get Mission from Mongo DB using getMissions Rest API
-     */
-    @GetMapping("/getMissions")
-    public List<Mission> getMissions() {
+@GetMapping("/getMissions")
+    public List<Mission>getMissions()
+    {
         return missionService.getMissions();
     }
-
     @GetMapping("/getMissionDetails")
-    public Mission missionDetails(@RequestParam String id) {
+    public Mission missionDetails(@RequestParam String id)
+    {
         System.out.println(id);
-        return missionService.getMissions(id);
+      return   missionService.getMissions(id);
 
     }
+/**
+*Service for editing a existing mission.
+*/
 
-    /**
-     * Method to edit Mission in Mongo DB using editMission Rest API
-     */
+
     @PostMapping("/editMission")
     public void editMission(@RequestBody Mission mission) {
         missionService.updateMission(mission);
