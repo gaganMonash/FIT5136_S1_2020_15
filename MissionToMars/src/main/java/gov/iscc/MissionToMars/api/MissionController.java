@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Method to add Mission details in Mongo DB using addMission Rest API
+ */
 @RestController
 public class MissionController {
 
@@ -21,25 +24,23 @@ public class MissionController {
     MissionService missionService;
     @Autowired
     UserService userService;
-
-    /**
-     * Method to add Mission using addMission Rest API
-     */
     @PostMapping("/addMission")
-    public void addMission(@RequestBody Mission mission) {
+    public void addMission(@RequestBody Mission mission)
+    {
         ObjectId id = new ObjectId();
         try {
 
 
             mission.set_id(id.toString());
             mission.setKey(id.toString());
-            userService.updateMissionList(mission.getCoordinatorId(), id.toString());
-        } catch (Exception e) {
+           userService.updateMissionList(mission.getCoordinatorId(),id.toString());
+        }catch (Exception e)
+        {
             e.printStackTrace();
         }
 
         List<Integer> administrators = mission.getAdministrators();
-        if (administrators != null) {
+        if(administrators!=null) {
             for (int admin :
                     administrators) {
                 userService.updateMissionList(admin, id.toString());
@@ -50,24 +51,25 @@ public class MissionController {
 
     }
 
-    /**
-     * Method to get Mission from Mongo DB using getMissions Rest API
-     */
-    @GetMapping("/getMissions")
-    public List<Mission> getMissions() {
+/**
+ * Method to get Mission details from Mongo DB using getMission Rest API
+ */
+@GetMapping("/getMissions")
+    public List<Mission>getMissions()
+    {
         return missionService.getMissions();
     }
-
     @GetMapping("/getMissionDetails")
-    public Mission missionDetails(@RequestParam String id) {
+    public Mission missionDetails(@RequestParam String id)
+    {
         System.out.println(id);
-        return missionService.getMissions(id);
+      return   missionService.getMissions(id);
 
     }
 
-    /**
-     * Method to edit Mission in Mongo DB using editMission Rest API
-     */
+/**
+ * Method to edit Mission details in Mongo DB using editMission Rest API
+ */
     @PostMapping("/editMission")
     public void editMission(@RequestBody Mission mission) {
         missionService.updateMission(mission);
