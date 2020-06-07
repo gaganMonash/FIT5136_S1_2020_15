@@ -40,7 +40,7 @@ CandidateRepo candidateRepo;
             ageStart=18;
             ageEnd=25;
         }
-        else if(age!=null && age.equals("25-31"))
+        else if(age!=null && age.equals("26-31"))
         {
             ageStart=26;
             ageEnd=31;

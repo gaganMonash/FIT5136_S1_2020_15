@@ -15,12 +15,12 @@ public class Shuttle {
 
 @Id
     int _id;
-    int travelSpeed;
-    int cargoCapacity;
-    String countryOrigin;
-    int fuelCapacity;
-    String shuttleName;
-    String manufactureYear;
+    int travel_speed;
+    int cargo_capacity;
+    String country_origin;
+    int fuel_capacity;
+    String name;
+    String manufacture_year;
     String origin;
 
 }
