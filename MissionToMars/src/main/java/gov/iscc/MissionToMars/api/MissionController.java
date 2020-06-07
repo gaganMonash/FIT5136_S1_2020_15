@@ -1,6 +1,6 @@
 package gov.iscc.MissionToMars.api;
 /**
- * @Authour : Saral Khandelwal
+ *@Authour : Saral Khandelwal
  * Methods related to Mission API
  */
 
