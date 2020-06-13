@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <title>Mission To Mars</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/custom.css">
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css'>
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css'>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    </head>
+</head>
+<body class="background_stars">
+<!-- navbar starts here -->
+<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 ">
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 ">
+        <h2 class="font-white">Mission To Mars</h2>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 ">
+        <input type="submit" name="" value="Logout" id="" class=" logout_button pull-right">
+    </div>
+</div>
+<!-- navbar ends here -->
+<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 margin-top-50">
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2 user_card">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center margin-top-20">
+            <i class="fas fa-user color-white" style="font-size: 35px;"></i>
+        </div>
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center margin-top-10">
+            <p class="color-white margin-bottom-0" style="font-size: 20px;" id="user_name">
+            </p>
+        </div>
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center margin-top-0">
+            <p class="color-white margin-bottom-0" style="font-size: 20px;"> Mission Administrator</p>,
+        </div>
+
+    </div>
+
+    <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10">
+        <div class="container">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 mission_list">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center font-white">
+                    <h3>Active Missions</h3>
+                </div>
+                <div class="color-white">
+                    <div class ="" id="test" style="width: 100%;display: inline-flex;overflow-x: scroll;font-size: 16px" >
+                    </div>
+                </div>
+            </div>
+
+<!--            shuttle form starts here -->
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center create_box font-white">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center">
+                    <h3>Shuttle Selection</h3>
+                </div>
+
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center">
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                        <!-- each field start-->
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 margin-top-20">
+                            <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <p class="font-size-16">Mission</p>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <select class="form-control woo-inputs-sm form_fields" name="Purpose" id="load_missions">
+                                        <option>Not Selected</option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--each field end-->
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                        <!-- each field start-->
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 margin-top-20">
+                            <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <p class="font-size-16">Job</p>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <input class="form-control width-100 form_fields" type="text" id="" name ="" placeholder="Enter Job">
+                                </div>
+                            </div>
+                        </div>
+                        <!--each field end-->
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center">
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                        <!-- each field start-->
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 margin-top-20">
+                            <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <p class="font-size-16">Shuttle</p>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12">
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <select class="form-control woo-inputs-sm form_fields" name="Purpose" id="load_shuttles">
+                                        <option>Not Selected</option>
+
+                                    </select>
+                                    <input type="submit" name="" value="Submit" id="" class="pull-left logout_button margin-10">
+                                    <a class="a-deco" href="select_canditates.html" target="_blank">
+                                        <input type="submit" name="" value="Select Candidates" id="" class="pull-left
+                                margin-10 logout_button">
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!--each field end-->
+
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                        <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12"></div>
+                        <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12">
+<!--                            <input type="submit" name="" value="Submit" id="" class="pull-left logout_button margin-10">-->
+<!--                            <a class="a-deco" href="select_canditates.html" target="_blank">-->
+<!--                                <input type="submit" name="" value="Select Candidates" id="" class="pull-left-->
+<!--                                margin-10 logout_button">-->
+<!--                            </a>-->
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- each field start-->
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 margin-top-50 margin-bottom-20">
+                    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-12">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+                            <p class="font-size-16">Shuttle Details</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 create_box margin-top-0">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-left">
+                            Name:<span class="color-white margin-bottom-0 margin-left-10" style="font-size: 20px;" id="s_name"></span><br>
+                            Travel Speed: <span class="color-white margin-bottom-0 margin-left-10" style="font-size: 20px;" id="s_travel_speed"></span><br>
+                            Cargo Capacity<span class="color-white margin-bottom-0 margin-left-10" style="font-size: 20px;" id="s_cargo_capacity"></span><br>
+                            Country of Orgin<span class="color-white margin-bottom-0 margin-left-10" style="font-size: 20px;" id="s_country_origin"></span><br>
+                            Fuel Capacity<span class="color-white margin-bottom-0 margin-left-10" style="font-size: 20px;" id="s_fuel_capacity"></span><br>
+                            manufacture Year<span class="color-white margin-bottom-0 margin-left-10" style="font-size: 20px;" id="s_manufacture_year"></span><br>
+                            Origin:<span class="color-white margin-bottom-0 margin-left-10" style="font-size: 20px;" id="s_origin"></span><br>
+                        </div>
+                    </div>
+                </div>
+                <!--each field end-->
+
+            </div>
+            <!--            shuttle form ends here -->
+
+        </div>
+
+    </div>
+</div>
+
+
+
+</body>
+
+<script>
+    var user_name = localStorage.getItem("user_name");
+    var user_id1 = localStorage.getItem("user_id1");
+    console.log(user_id1);
+    document.getElementById('user_name').innerHTML = user_name;
+
+
+    // Load mission starts
+    var bodymission= {"userLoginId":user_id1};
+    var Urlmission = "http://localhost:8082/getUserMissions";
+    var xhrmission = new XMLHttpRequest();
+    xhrmission.open('POST', Urlmission, true);
+    xhrmission.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhrmission.send(JSON.stringify(bodymission));
+    xhrmission.onloadend = processRequestmission;
+
+    function processRequestmission(e) {
+        var missions_load = JSON.parse(xhrmission.responseText);
+
+        for (var i=0;i<missions_load.length;i++){
+            //console.log(missions_load[i].id)
+                var option3 = document.createElement('option');
+                option3.id = missions_load[i].id;
+                option3.innerHTML = missions_load[i].name;
+                //document.body.appendChild(option3);
+                document.getElementById("load_missions").appendChild(option3);
+
+            var divM = document.createElement('div');
+            divM.id = missions_load[i].id;
+            divM.className= "tile";
+
+            divM.style="width: 20%;margin:10px;border-radius:5px";
+            divM.innerHTML =  "<i class=\"fas fa-rocket\"></i>+<h3><b>"+missions_load[i].name+"</b></h3>"
+                +  "<br><h4> <b style='color: green'>" +missions_load[i].status+"</b></h4>";
+            //document.body.appendChild(divM);
+            document.getElementById("test").appendChild(divM);
+            $("#test").children('div').addClass("active_missions");
+
+        }
+
+    }
+    // Load mission ends
+
+
+
+
+    // Load shuttles starts
+    var bodyshuttle= " ";
+    var Urlshuttle = "http://localhost:8082/getShuttles";
+    var xhrshuttle = new XMLHttpRequest();
+    xhrshuttle.open('GET', Urlshuttle, true);
+    xhrshuttle.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhrshuttle.send(JSON.stringify(bodyshuttle));
+    xhrshuttle.onloadend = processRequestshuttle;
+
+    function processRequestshuttle(e) {
+        var shuttle_load = JSON.parse(xhrshuttle.responseText);
+
+        for (var i=0;i<shuttle_load.length;i++){
+            //console.log(shuttle_load[i].id)
+            var option = document.createElement('option');
+            option.id = shuttle_load[i]._id;
+            option.value = shuttle_load[i]._id;
+            option.innerHTML = shuttle_load[i].name;
+            //document.body.appendChild(option3);
+            document.getElementById("load_shuttles").appendChild(option);
+
+        }
+
+    }
+    // Load shuttles ends
+
+    // load shuttle details starts here
+
+    $('#load_shuttles').change(function() {
+
+        var selected_shuttle= $("#load_shuttles").val();
+        console.log(selected_shuttle);
+
+        var bodyshuttledet= " ";
+        var Urlshuttledet = "http://localhost:8082/getShuttle?id="+selected_shuttle;
+        var xhrshuttledet = new XMLHttpRequest();
+        xhrshuttledet.open('GET', Urlshuttledet, true);
+        xhrshuttledet.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhrshuttledet.send(JSON.stringify(bodyshuttledet));
+        xhrshuttledet.onloadend = processRequestshuttledet;
+
+        function processRequestshuttledet(e) {
+            var shuttle_loaddet = JSON.parse(xhrshuttledet.responseText);
+
+            document.getElementById('s_name').innerHTML = shuttle_loaddet.name;
+            document.getElementById('s_travel_speed').innerHTML = shuttle_loaddet.travel_speed;
+            document.getElementById('s_cargo_capacity').innerHTML = shuttle_loaddet.cargo_capacity;
+            document.getElementById('s_country_origin').innerHTML = shuttle_loaddet.country_origin;
+            document.getElementById('s_fuel_capacity').innerHTML = shuttle_loaddet.fuel_capacity;
+            document.getElementById('s_manufacture_year').innerHTML = shuttle_loaddet.manufacture_year;
+            document.getElementById('s_origin').innerHTML = shuttle_loaddet.origin;
+        }
+
+
+
+    });
+
+    // load shuttle details ends here
+
+
+
+    $(document).on('click', '.tile', function(){
+        // Open new Tab
+        var miss_id = this.id;
+        window.open('/mission.html?id='+miss_id, '_blank');
+        window.focus();
+
+        var edit_bodyadmin= " ";
+        console.log(miss_id);
+        var Url_edit = "http://localhost:8082/getMissionDetails/?id="+miss_id;
+        var xhr_edit = new XMLHttpRequest();
+        xhr_edit.open('GET', Url_edit, true);
+        xhr_edit.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr_edit.send(JSON.stringify(edit_bodyadmin));
+        xhr_edit.onreadystatechange = processRequest_edit;
+        function processRequest_edit(e) {
+
+            if (xhr_edit.status == 200) {
+
+                //  window.location = '/mission.html?id='+miss_id
+                $('#generate_modal').modal('show');
+
+                var Mission_datils = JSON.parse(xhr_edit.responseText);
+                console.log(Mission_datils);
+
+                var edit_mission_name= Mission_datils.name;
+                var edit_mission_mission_desc= Mission_datils.description;
+
+                var edit_mission_country_origin= Mission_datils.origin;
+                var edit_mission_country_allowed= Mission_datils.countriesAllowed;
+                var edit_mission_launch_date= Mission_datils.launchDate;
+
+
+                var edit_mission_emp_title= Mission_datils.employmentRequirements[0].employmentType;
+                // console.log(edit_mission_emp_title)
+
+                var edit_mission_emp_no= Mission_datils.employmentRequirements[0].number;
+                // console.log(edit_mission_emp_no)
+
+
+                var edit_mission_status= Mission_datils.status;
+                var edit_mission_admin= Mission_datils.administrators;
+
+
+                //document.getElementById('edit_mission_name').attr('placeholder',edit_mission_name);
+                $('#edit_mission_name').attr('placeholder',edit_mission_name);
+                $('#edit_mission_desc').attr('placeholder',edit_mission_mission_desc);
+                $('#edit_country_origin').attr('placeholder',edit_mission_country_origin);
+                $('#edit_country_allowed').attr('placeholder',edit_mission_country_allowed);
+                $('#edit_launch_date').attr('placeholder',edit_mission_launch_date);
+
+
+
+                //$('#edit_job_name').attr('placeholder',edit_mission_job_name);
+                //$('#edit_job_desc').attr('placeholder',edit_mission_job_desc);
+                $('#edit_emp_title').attr('placeholder',edit_mission_emp_title);
+                $('#edit_emp_no').attr('placeholder',edit_mission_emp_no);
+                $('#edit_status').attr('placeholder',edit_mission_status);
+                $('#edit_chose_admin').attr('placeholder',edit_mission_admin);
+                //$('#edit_destination').attr('placeholder',edit_mission_destination);
+
+                for (var i=0;i<Mission_datils.employmentRequirements.length;i++){
+                    var employmentName  = Mission_datils.employmentRequirements[i].employmentType;
+                    var amount  = Mission_datils.employmentRequirements[i].number;
+                    console.log(employmentName);
+                    console.log(amount);
+                    var text = document.createElement( 'input');
+                    text.type='text';
+                    var textNumber=document.createElement( 'input');
+                    textNumber.type='text';
+
+                    text.id = Mission_datils.employmentRequirements[i]+"number";
+                    text.innerHTML = employmentName;
+
+                    //document.body.appendChild(text);
+                    document.getElementById("#edit_emp_div").appendChild(text);
+
+                    textNumber.id = Mission_datils.employmentRequirements[i]+"number";
+                    textNumber.innerHTML = amount;
+                    //document.body.appendChild(textNumber);
+                    $('#generate_modal')
+                    document.getElementById("#edit_emp_div").appendChild(textNumber);
+
+                }
+
+
+
+                // add field in modal
+                $(document).on('click', '#job_button_plus', function(){
+                    $( "#edit_job_name" ).clone().appendTo( "#edit_job_div" );
+                    $( "#edit_job_desc" ).clone().appendTo( "#edit_job_div" );
+                });
+
+
+
+                console.log("Show Modal")
+
+                $('#generate_modal').modal('show');
+            }
+        }
+
+    });
+
+
+
+    $("#owl-example").owlCarousel({
+        itemsDesktop : [1499,4],
+        itemsDesktopSmall : [1199,3],
+        itemsTablet : [899,2],
+        itemsMobile : [599,1],
+        navigation : true,
+        pagination: true,
+        autoPlay: 5000,
+        navigationText : ['<span class="fa-stack"><i class="fas fa-chevron-left pull-left color-black"></i></i><i class="fas fa-chevron-left pull-left color-black"></i></span>','<span class="fa-stack"><i class="fas fa-chevron-right pull-right color-black"></i><i class="fas fa-chevron-right pull-right color-black"></i></span>'],
+    });
+
+
+
+</script>
+</html>
