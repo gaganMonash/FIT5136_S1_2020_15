@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mission To Mars</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/custom.css">
+    </head>
+
+    <body class=""> 
+        <div id="particles-js"></div>
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <h2 class="font-white">Mission To Mars</h2>
+                </div>
+<!--                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 font-white">-->
+<!--                    <p style="font-size: 14px;">-->
+<!--                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque aliquid dolorum, porro est, sit doloremque asperiores fuga vel quae ex, neque necessitatibus sapiente dicta. Officiis quis iusto facilis laudantium vel!-->
+<!--                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque aliquid dolorum, porro est, sit doloremque asperiores fuga vel quae ex, neque necessitatibus sapiente dicta. Officiis quis iusto facilis laudantium vel!-->
+<!--                    -->
+<!--                    </p>-->
+
+<!--                </div>-->
+
+
+                <!-- main login form starts here -->
+                <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7 no-lr-pad login_from">
+                    <div class="col-md-13 col-lg-12 col-sm-12 col-xs-12 no-lr-pad">
+                        <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7 color-white no-lr-pad">
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 no-lr-pad">
+                                <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/helmet-mars-3000.jpg" 
+                                style="width: 100%;">
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5">
+                            <div class="box margin-top-10">
+                                <h2 class="font-white">Login</h2>
+                                
+                                <!-- <form > -->
+                                    <div class="inputBox">
+                                        <input type="text" name="" required="" id="form_user_id">
+                                        <label for="">Username</label>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="password" name="" required="" id="form_password">
+                                        <label for="">Password</label>
+                                    </div>
+                                    <input type="submit" name="" value="Submit" id="login_button">
+                                <!-- </form > -->
+                            </div>
+                        </div>
+                        <div class="color-white">
+                            <p> Designed and Developed from scratch by Team 15</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- main login form ends here -->
+
+            </div>
+        <!-- <div class="alert alert-success">
+            <strong>Success!</strong> This alert box could indicate a successful or positive action.
+        </div> -->
+    </body>
+
+
+<script>
+     particlesJS("particles-js", {"particles":{"number":{"value":130,"density":{"enable":true,"value_area":800}},"color":{"value":"#7092ff"},"shape":{"type":"star","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":7.308694910712106,"size_min":0.1,"sync":true}},"line_linked":{"enable":false,"distance":96.20472365193136,"color":"#ffffff","opacity":0.12827296486924183,"width":1},"move":{"enable":true,"speed":4,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"window","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+     var count_particles, update;count_particles = document.querySelector('.js-count-particles');
+
+     $(document).on('click', '#login_button', function(){
+
+             var user_id= $("#form_user_id").val();
+             var password= $("#form_password").val();
+             console.log(user_id);
+             console.log(password);
+
+             var body={"userLoginId":user_id,"password":password};
+             var Url = "http://localhost:8082/authenticate";
+             var xhr = new XMLHttpRequest();
+             xhr.open('POST', Url, true);
+             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+             xhr.send(JSON.stringify(body));
+             xhr.onreadystatechange = processRequest;
+
+             function processRequest(e) {
+                 if (xhr.readyState == 4 && xhr.status == 200) {
+
+                 var response1 = JSON.parse(xhr.responseText);
+                 var userLevel = response1.userLevel;
+                 var userName = response1.userName;
+                 var  user_id1 = response1.userLoginId;
+                 //var password = response1.User.password;
+                  console.log(userLevel);
+                 //     console.log(response1);
+                 //     var datas = response1.Missions.slice();
+                     //var Missions = response1.Missions.slice();
+                     //console.log(Missions);
+
+                 if (userLevel == "Coordinator"){
+                     window.location.href='coordinator_dashboard.html';
+                     localStorage.setItem("user_name",userName);
+                     localStorage.setItem("user_id",user_id);
+                     //localStorage["datas"] = JSON.stringify(datas);
+                     //localStorage.setItem("user_password",password);
+                     //localStorage.setItem("Missions", JSON.stringify(Missions));
+                 }
+
+                 else if (userLevel == "Administrator"){
+                     window.location.href='administrator_dashboard.html';
+                     localStorage.setItem("user_name",userName);
+                     localStorage.setItem("user_id1",user_id1);
+                     console.log(user_id1);
+                     //localStorage.setItem("user_password",password);
+
+                 }
+
+             }
+          }
+
+     });
+
+     //$(document).on('click', '#login_button', function(){
+     //    var user_id= $("#form_user_id").val();
+     //    var password= $("#form_password").val();
+     //    console.log(user_id);
+     //    console.log(password);
+
+     // if (user_id !='' && password !='')
+     // {
+     //     var body={"userLoginId":user_id,"password":password}
+     //
+     //         $.ajax({
+     //             type: 'POST',
+     //             url: 'http://localhost:8082/authenticate',
+     //             data: JSON.stringify(body),
+     //             dataType: 'json',
+     //             success: function(response)
+     //             {
+     //                 //$('#response_paste').html(response.response_message);
+     //                 //toast_it(response.response_message);
+     //                 console.log(response);
+     //                 alert("received");
+     //             }
+     //         });
+     //
+     //         //$('input[type="text"], textarea').val('');  // to reset the form
+     //
+     //
+     //
+     //     //window.location.href='coordinator_dashboard.html';
+     // }
+
+</script>
+</html>
+
